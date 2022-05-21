@@ -1,8 +1,11 @@
 package com.desafiocrud.desafio01.entities;
 
+import java.io.Serializable;
 import java.time.Instant;
 
-public class Client {
+
+public class Client  implements Serializable {
+	private static final long serialVersionUID = 1L;
 	
 	private Long id;
 	private String name;
@@ -11,10 +14,16 @@ public class Client {
 	private Instant birthDate;
 	private Integer children;
 	
+	public Client(Long id, String name) {
+		this.id = id;
+		this.name = name;
+	}
+	
 	public Client() {
 		
 	}
 
+	
 	public Client(Long id, String name, String cpf, Double income, Instant birthDate, Integer children) {
 		super();
 		this.id = id;
